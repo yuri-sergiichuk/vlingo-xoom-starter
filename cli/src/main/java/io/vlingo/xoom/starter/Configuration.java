@@ -1,6 +1,7 @@
 package io.vlingo.xoom.starter;
 
 import com.google.common.collect.Maps;
+import freemarker.template.TemplateExceptionHandler;
 import io.vlingo.xoom.starter.task.gui.steps.BrowserLaunchCommandResolverStep;
 import io.vlingo.xoom.starter.task.gui.steps.GraphicalUserInterfaceBootstrapStep;
 import io.vlingo.xoom.starter.task.steps.*;
@@ -8,11 +9,9 @@ import io.vlingo.xoom.starter.task.template.StorageType;
 import io.vlingo.xoom.starter.task.template.Terminal;
 import io.vlingo.xoom.starter.task.template.steps.*;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
+import static freemarker.template.Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS;
 import static io.vlingo.xoom.starter.task.template.code.CodeTemplateFile.*;
 
 public class Configuration {
@@ -61,4 +60,15 @@ public class Configuration {
     );
 
     public static final String PROPERTIES_FILENAME = "vlingo-xoom-starter.properties";
+
+    public static freemarker.template.Configuration freeMarkerSettings() {
+        final freemarker.template.Configuration configuration =
+                new freemarker.template.Configuration(DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
+
+        configuration.setClassForTemplateLoading(Configuration.class, "/");
+        configuration.setDefaultEncoding("UTF-8");
+        configuration.setLocale(Locale.US);
+        configuration.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
+        return configuration;
+    }
 }

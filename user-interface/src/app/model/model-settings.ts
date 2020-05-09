@@ -6,7 +6,9 @@ export class ModelSettings {
     public aggregates = new Array<Aggregate>();
     public restResources = new Array<Aggregate>();
     public storageType: String;
+    public useCQRS: Boolean;
     public useProjections: Boolean;
+    public database: String;
     public commandModelDatabase: String;
     public queryModelDatabase: String;
 
