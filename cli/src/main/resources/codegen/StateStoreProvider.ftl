@@ -15,8 +15,8 @@ import io.vlingo.symbio.EntryAdapterProvider;
 import io.vlingo.symbio.StateAdapterProvider;
 import io.vlingo.symbio.store.dispatch.Dispatcher;
 import io.vlingo.symbio.store.dispatch.DispatcherControl;
+import io.vlingo.symbio.store.dispatch.Dispatchable;
 import io.vlingo.symbio.store.state.StateStore;
-import ${storeClassName};
 
 public class ${storeProviderName} {
   private static ${storeProviderName} instance;
@@ -60,7 +60,7 @@ public class ${storeProviderName} {
     registry.register(new Info(storeWithControl._1, ${stateAdapter.stateClass}.class, ${stateAdapter.stateClass}.class.getSimpleName()));
 </#list>
 
-    instance = new CommandModelStoreProvider(storeWithControl._1, storeWithControl._2);
+    instance = new ${storeProviderName}(storeWithControl._1, storeWithControl._2);
 
     return instance;
   }

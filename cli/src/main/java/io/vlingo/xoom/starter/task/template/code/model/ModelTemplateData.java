@@ -37,7 +37,7 @@ public class ModelTemplateData extends TemplateData {
                              final StorageType storageType,
                              final String projectPath) {
         this.storageType = storageType;
-        this.name = dataBlocks[0].trim();
+        this.name = dataBlocks[0];
         this.packageName = resolvePackage(basePackage);
         this.parameters = loadParameters();
         this.absolutePath =

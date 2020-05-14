@@ -22,3 +22,4 @@ public class StoreProviderConfiguration {
     ${storeProvider.name}.using(world.stage(), registry);
 </#list>
   }
+}

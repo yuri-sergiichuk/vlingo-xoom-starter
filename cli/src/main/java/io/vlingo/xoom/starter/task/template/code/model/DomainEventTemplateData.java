@@ -20,7 +20,7 @@ public class DomainEventTemplateData extends TemplateData {
     public final String absolutePath;
 
     public DomainEventTemplateData(final String name, final String packageName, final String absolutePath) {
-        this.name = name.trim();
+        this.name = name;
         this.packageName = packageName;
         this.absolutePath = absolutePath;
     }

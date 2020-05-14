@@ -14,6 +14,9 @@ export class ModelSettings {
 
     constructor() {
         this.storageType = "STATE_STORE";
+        this.database = "IN_MEMORY";
+        this.commandModelDatabase ="IN_MEMORY";
+        this.queryModelDatabase = "IN_MEMORY";
     }
 
     public domainEventsOf(aggregateId: Number) : Array<DomainEvent> {
