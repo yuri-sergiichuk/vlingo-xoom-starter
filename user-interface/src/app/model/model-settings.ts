@@ -13,7 +13,7 @@ export class ModelSettings {
     public queryModelDatabase: String;
 
     constructor() {
-        this.storageType = "OBJECT_STORE";
+        this.storageType = "STATE_STORE";
     }
 
     public domainEventsOf(aggregateId: Number) : Array<DomainEvent> {

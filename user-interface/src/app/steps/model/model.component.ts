@@ -116,12 +116,7 @@ export class ModelComponent extends StepComponent implements AfterViewInit {
 
   databaseVendors() {
     return [
-      {name: "Not applicable", value: "NONE"},
-      {name: "Postgres", value: "POSTGRES"},
-      {name: "HSQLDB", value: "HSQLDB"},
-      {name: "MariaDB", value: "MARIADB"},
-      {name: "MySQL", value: "MYSQL"},
-      {name: "YugaByte", value: "YUGABYTE"}
+      {name: "In Memory", value: "IN_MEMORY"}
     ];
   }
 
