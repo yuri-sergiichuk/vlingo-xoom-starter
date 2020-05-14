@@ -3,7 +3,7 @@ package ${packageName};
 import java.util.Arrays;
 
 <#list imports as import>
-import ${import.fullyQualifiedClassName};
+import ${import.qualifiedClassName};
 </#list>
 
 import io.vlingo.actors.Stage;
@@ -15,7 +15,7 @@ import io.vlingo.symbio.store.dispatch.Dispatchable;
 import io.vlingo.symbio.store.dispatch.Dispatcher;
 import io.vlingo.symbio.store.dispatch.DispatcherControl;
 import io.vlingo.symbio.store.state.StateStore;
-import ${stateStoreClassName};
+import ${storeClassName};
 
 public class QueryModelStateStoreProvider {
   private static QueryModelStateStoreProvider instance;
@@ -45,7 +45,7 @@ public class QueryModelStateStoreProvider {
       public void dispatch(Dispatchable d) { }
     };
 
-    final StateStore store = stage.actorFor(StateStore.class, ${stateStoreClassName}.class, Arrays.asList(noop));
+    final StateStore store = stage.actorFor(StateStore.class, ${storeClassName}.class, Arrays.asList(noop));
 
     final Queries queries = stage.actorFor(Queries.class, QueriesActor.class, store);
 

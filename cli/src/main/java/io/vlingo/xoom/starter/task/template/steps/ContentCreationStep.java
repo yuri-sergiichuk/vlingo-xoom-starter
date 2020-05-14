@@ -5,16 +5,16 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.xoom.starter.task.steps;
+package io.vlingo.xoom.starter.task.template.steps;
 
 import io.vlingo.xoom.starter.task.TaskExecutionContext;
+import io.vlingo.xoom.starter.task.steps.TaskExecutionStep;
 
-public interface TaskExecutionStep {
+public class ContentCreationStep implements TaskExecutionStep {
 
-    void process(final TaskExecutionContext context);
-
-    default boolean shouldProcess(final TaskExecutionContext context) {
-        return true;
+    @Override
+    public void process(final TaskExecutionContext context) {
+        context.contents().forEach(content -> content.create());
     }
 
 }

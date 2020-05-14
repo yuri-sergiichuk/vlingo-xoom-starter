@@ -7,11 +7,8 @@
 
 package io.vlingo.xoom.starter.codegeneration;
 
-import org.junit.jupiter.api.Test;
-
 public class GeneratorsTest {
 
-  @Test
   public void testCommandModelStateStoreProviderGenerator() throws Exception {
     final StateStoreProviderGenerator generator = new StateStoreProviderGenerator();
 
@@ -31,7 +28,6 @@ public class GeneratorsTest {
     System.out.println(generator.generate("CommandModelStateStoreProvider"));
   }
 
-  @Test
   public void testQueryModelStateStoreProviderGenerator() throws Exception {
     final StateStoreProviderGenerator generator = new StateStoreProviderGenerator();
 
@@ -54,7 +50,6 @@ public class GeneratorsTest {
     System.out.println(generator.generate("QueryModelStateStoreProvider"));
   }
 
-  @Test
   public void testStateAdapterGenerator() throws Exception {
 //    final StateAdapterGenerator profileStateGenerator = new StateAdapterGenerator("ProfileState");
 //    profileStateGenerator.inputOfPackageName("com.beyond5.auth.infra.persistence");
